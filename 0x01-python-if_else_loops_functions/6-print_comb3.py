@@ -9,4 +9,3 @@ while _1st_digite < 10:
         print("{:d}{:d}".format(_1st_digite, _2nd_digite), end=separator)
         _2nd_digite += 1
     _1st_digite += 1
-print("\n")
