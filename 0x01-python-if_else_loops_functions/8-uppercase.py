@@ -9,4 +9,3 @@ def uppercase(str):
             converter = 0
         print("{:s}".format(chr((ord(str[i]) - converter))), end='')
         i += 1
-    print("\n")
