@@ -13,4 +13,4 @@ def uppercase(input_str):
         result_str += chr(ord(input_str[i]) - converter)
         i += 1
 
-    print(result_str)
+    print("{:s}".format(result_str))
