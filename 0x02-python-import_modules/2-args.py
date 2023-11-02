@@ -11,7 +11,7 @@ if __name__ == "__main__":
         print("{:d} argument:".format(i-1))
         print("{:d}: {:s}".format(j, argv[j]))
     elif i > 1:
-        print("{:d} arguments.".format(i-1))
+        print("{:d} arguments:".format(i-1))
 
         while n+1 < i:
             print("{:d}: {:s}".format(j, argv[n+1]))
