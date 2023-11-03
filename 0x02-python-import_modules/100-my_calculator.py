@@ -22,11 +22,11 @@ if __name__ == "__main__":
 
     else:
         if operator == "+":
-            result = a + b
+            result = add(a, b)
         elif operator == "-":
-            result = a - b
+            result = sub(a, b)
         elif operator == "*":
-            result = a * b
+            result = mul(a, b)
         elif operator == "/":
-            result = a / b
+            result = div(a, b)
         print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
