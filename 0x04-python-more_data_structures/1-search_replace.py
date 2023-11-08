@@ -2,9 +2,10 @@
 def search_replace(my_list, search, replace):
     my_list_len = len(my_list)
     index = 0
+    new_list = my_list
     while index < my_list_len:
         if my_list[index] == search:
-            my_list[index] = replace
+            new_list[index] = replace
         index += 1
         
-    return my_list
+    return new_list
