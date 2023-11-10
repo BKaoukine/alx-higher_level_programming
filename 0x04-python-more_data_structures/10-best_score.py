@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
     if a_dictionary:
-        best_score_value = next(iter(a_dictionary.values()), None)
-        best_score_key = None
+        first_key = next(iter(a_dictionary.keys()))
+        best_score_value = a_dictionary[first_key]
+        best_score_key = first_key
 
         for key, value in a_dictionary.items():
             if value > best_score_value:
