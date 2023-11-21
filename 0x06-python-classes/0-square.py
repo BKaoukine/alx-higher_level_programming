@@ -8,8 +8,7 @@ class Square:
 
     Methods:
     None
-
-    pass:
     """
-    pass
 
+    """pass"""
+    pass
