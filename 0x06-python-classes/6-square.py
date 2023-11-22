@@ -11,8 +11,8 @@ class Square:
             size (int): square size.
             position (tuple): square position
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
         if position[0] < 0 and position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
