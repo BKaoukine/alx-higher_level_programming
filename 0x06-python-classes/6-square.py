@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""square class"""
-
+"""
+this module define class call square
+"""
 
 class Square:
     """Square class"""
@@ -42,14 +43,6 @@ class Square:
         """
         return self.__size
 
-    def position(self):
-        """position is a methode that gets the position attribute.
-
-        Returns:
-            returns position attribute
-
-        """
-        return self.__position
 
     @size.setter
     def size(self, value):
@@ -69,6 +62,16 @@ class Square:
             raise ValueError("size must be >= 0")
 
         self.__size = value
+
+    @property
+    def position(self):
+        """position is a methode that gets the position attribute.
+
+        Returns:
+            returns position attribute
+
+        """
+        return self.__position
 
     @position.setter
     def position(self, value):
