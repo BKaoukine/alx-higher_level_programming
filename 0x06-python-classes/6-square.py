@@ -3,6 +3,7 @@
 this module define class call square
 """
 
+
 class Square:
     """Square class"""
     def __init__(self, size=0, position=(0, 0)):
@@ -33,7 +34,6 @@ class Square:
 
         """
         return self.__size
-
 
     @size.setter
     def size(self, value):
