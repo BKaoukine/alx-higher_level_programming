@@ -18,6 +18,9 @@ class Rectangle:
     def __str__(self) -> str:
         """A string representation of the object created or the Classe"""
         result = ""
+        if self.width == 0 or self.height == 0:
+            return result
+
         for i in range(self.height):
             for j in range(self.width):
                 result += "#"
