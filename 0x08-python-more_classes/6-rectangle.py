@@ -5,6 +5,7 @@
 class Rectangle:
     """Rectangle Classe"""
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """initialization of instational
@@ -25,7 +26,7 @@ class Rectangle:
 
         for i in range(self.height):
             for j in range(self.width):
-                result += "#"
+                result += Rectangle.print_symbol
             if i < self.height - 1:
                 result += "\n"
         return result
