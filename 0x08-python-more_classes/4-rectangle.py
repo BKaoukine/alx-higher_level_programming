@@ -30,7 +30,8 @@ class Rectangle:
 
     def __repr__(self) -> str:
         """returns a string representation of an object."""
-        return f"Rectangle(width={self.width}, height={self.height})"
+        rp_rectangle = "Rectangle(width={self.width}, height={self.height})"
+        return rp_rectangle
 
     @property
     def width(self):
