@@ -26,7 +26,7 @@ class Rectangle:
 
         for i in range(self.height):
             for j in range(self.width):
-                result += Rectangle.print_symbol
+                result += str(Rectangle.print_symbol)
             if i < self.height - 1:
                 result += "\n"
         return result
