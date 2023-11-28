@@ -18,19 +18,12 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
-        def __str__(self) -> str:
-            """A string representation of the object created or the Classe"""
-            if self.__width == 0 or self.__height == 0:
-                return ""
-            ps = str(self.print_symbol)
-            return '\n'.join([ps * self.__width for _ in range(self.__height)])
-
-        for i in range(self.height):
-            for j in range(self.width):
-                result += str(Rectangle.print_symbol)
-            if i < self.height - 1:
-                result += "\n"
-        return result
+    def __str__(self) -> str:
+        """A string representation of the object created or the Classe"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        ps = str(self.print_symbol)
+        return '\n'.join([ps * self.__width for _ in range(self.__height)])
 
     def __repr__(self) -> str:
         """returns a string representation of an object."""
