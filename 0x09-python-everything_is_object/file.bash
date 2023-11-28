@@ -1,3 +1,3 @@
 #!/bin/bash
-touch {17..40}-answer.txt
+rm {29..40}-answer.txt
 
