@@ -1,3 +1,3 @@
 #!/bin/bash
-rm {29..40}-answer.txt
+touch 106-line{1..5}.txt
 
