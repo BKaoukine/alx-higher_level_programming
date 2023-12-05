@@ -11,5 +11,5 @@ arg_list = []
 for arg in sys.argv:
     arg_list.append(arg)
 
-save_to_json_file(arg_list, add_item.json)
 load_from_json_file(add_item.json)
+save_to_json_file(arg_list, add_item.json)
