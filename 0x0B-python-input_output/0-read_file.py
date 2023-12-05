@@ -4,7 +4,7 @@
 
 def read_file(filename=""):
     """Open the filename as file."""
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(filename, encoding="utf-8") as file:
         """Reade the file."""
         content = file.read()
-        print(content)
+        print(content, end="")
