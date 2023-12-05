@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Function that opens a file and read it's contecnt."""
 
 
