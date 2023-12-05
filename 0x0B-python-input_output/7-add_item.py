@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-"""Script."""
-import json
+"""file"""
 import sys
-module_name1 = '6_Load_from_json_file'
-load_from_json_file = getattr(__import__(module_name1), 'load_from_json_file')
-module_name2 = '5_save_to_json_file.py'
-save_to_json_file = getattr(__import__(module_name1), 'save_to_json_file')
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-arguments = sys.argv[1:]
 
-load_from_json_file(add_item.json)
-save_to_json_file(arguments, add_item.json)
+if __name__ == "__main__":
+    try:
+        item_list = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        item_list = []
+
+    args = sys.argv[1:]
+    item_list.extend(args)
+    save_to_json_file(item_list, "add_item.json")
