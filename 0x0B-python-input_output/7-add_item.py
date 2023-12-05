@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Script that adds all arguments to a Python list,
- and then save them to a file.
- """
+"""Script"""
 import json
 import sys
 module_name1 = '6_Load_from_json_file'
