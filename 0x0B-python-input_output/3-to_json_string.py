@@ -8,5 +8,5 @@ def to_json_string(my_obj):
 
     my_obj: the object to convert.
     """
-    serialize_obj = json.dump(my_obj)
+    serialize_obj = json.dumps(my_obj)
     return serialize_obj
