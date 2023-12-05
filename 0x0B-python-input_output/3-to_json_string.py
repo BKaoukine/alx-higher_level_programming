@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Function that converts a string into a JSON."""
-
-
 import json
+
+
 def to_json_string(my_obj):
     """to_json_string taks one arg.
 
