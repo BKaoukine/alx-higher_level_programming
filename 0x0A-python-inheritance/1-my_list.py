@@ -10,6 +10,4 @@ class MyList(list):
 
         available methodes and attributes  of the class.
         """
-        sort_list = dir(self)
-        sort_list.sort()
-        print(sort_list)
+        print(sorted(self))
