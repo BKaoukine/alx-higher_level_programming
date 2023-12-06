@@ -31,7 +31,8 @@ class Student:
         """
 
         if attr is not None:
-            reslt = {at: self.__dict__[at] for at in self.__dict__.keys() & attr}
+            reslt = {at: self.__dict__[at]
+                     for at in self.__dict__.keys() & attr}
             return reslt
         else:
             return self.__dict__
