@@ -6,8 +6,5 @@ class MyList(list):
     """class."""
 
     def print_sorted(self):
-        """print_sorted method sorts a list of all.
-
-        available methodes and attributes  of the class.
-        """
+        """print_sorted method prints sorted a list."""
         print(sorted(self))
