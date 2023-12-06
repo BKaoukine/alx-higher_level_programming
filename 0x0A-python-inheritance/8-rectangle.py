@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """Rectangle class."""
 basegeometry = __import__('7-base_geometry').basegeometry
 
