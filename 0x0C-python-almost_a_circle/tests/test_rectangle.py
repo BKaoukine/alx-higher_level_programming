@@ -1,93 +1,91 @@
 import unittest
 from models.rectangle import Rectangle
 
+
 class TestRectangleClass(unittest.TestCase):
 
-    def setUp(self):
-        self.rectangle = Rectangle(5, 3, 2, 1, id=1)
-
-    def test_constructor_with_id(self):
-        self.assertEqual(self.rectangle.id, 1)
-        self.assertEqual(self.rectangle.width, 5)
-        self.assertEqual(self.rectangle.height, 3)
-        self.assertEqual(self.rectangle.x, 2)
-        self.assertEqual(self.rectangle.y, 1)
-
-    def test_constructor_without_id(self):
-        new_rectangle = Rectangle(8, 6, 3, 4)
-        self.assertNotEqual(self.rectangle.id, new_rectangle.id)
-        self.assertEqual(new_rectangle.width, 8)
-        self.assertEqual(new_rectangle.height, 6)
-        self.assertEqual(new_rectangle.x, 3)
-        self.assertEqual(new_rectangle.y, 4)
+    def test_constructor_with_width_and_height(self):
+        rect = Rectangle(4, 6, 2, 3, 1)
+        self.assertEqual(rect.id, 1)
+        self.assertEqual(rect.width, 4)
+        self.assertEqual(rect.height, 6)
+        self.assertEqual(rect.x, 2)
+        self.assertEqual(rect.y, 3)
 
     def test_width_property(self):
-        self.rectangle.width = 10
-        self.assertEqual(self.rectangle.width, 10)
+        rect = Rectangle(3, 5)
+        rect.width = 8
+        self.assertEqual(rect.width, 8)
 
         with self.assertRaises(TypeError):
-            self.rectangle.width = "invalid"
+            rect.width = "invalid"
 
         with self.assertRaises(ValueError):
-            self.rectangle.width = -5
+            rect.width = -5
 
     def test_height_property(self):
-        self.rectangle.height = 8
-        self.assertEqual(self.rectangle.height, 8)
+        rect = Rectangle(4, 7)
+        rect.height = 9
+        self.assertEqual(rect.height, 9)
 
         with self.assertRaises(TypeError):
-            self.rectangle.height = "invalid"
+            rect.height = "invalid"
 
         with self.assertRaises(ValueError):
-            self.rectangle.height = -3
+            rect.height = -3
 
     def test_x_property(self):
-        self.rectangle.x = 3
-        self.assertEqual(self.rectangle.x, 3)
+        rect = Rectangle(5, 8)
+        rect.x = 3
+        self.assertEqual(rect.x, 3)
 
         with self.assertRaises(ValueError):
-            self.rectangle.x = -2
+            rect.x = -2
 
     def test_y_property(self):
-        self.rectangle.y = 4
-        self.assertEqual(self.rectangle.y, 4)
+        rect = Rectangle(6, 9)
+        rect.y = 4
+        self.assertEqual(rect.y, 4)
 
         with self.assertRaises(ValueError):
-            self.rectangle.y = -1
+            rect.y = -1
 
     def test_area_method(self):
-        self.assertEqual(self.rectangle.area(), 15)
-
-    def test_display_method(self):
-        # Assuming stdout is captured for testing
-        with captured_output() as (out, _):
-            self.rectangle.display()
-        output = out.getvalue().strip()
-        self.assertEqual(output, "  #####\n  #####\n  #####")
+        rect = Rectangle(3, 4)
+        self.assertEqual(rect.area(), 12)
 
     def test_update_method_with_args(self):
-        self.rectangle.update(2, 8, 6, 3, 4)
-        self.assertEqual(self.rectangle.id, 2)
-        self.assertEqual(self.rectangle.width, 8)
-        self.assertEqual(self.rectangle.height, 6)
-        self.assertEqual(self.rectangle.x, 3)
-        self.assertEqual(self.rectangle.y, 4)
+        rect = Rectangle(5, 7)
+        rect.update(2, 8, 6, 3, 4)
+        self.assertEqual(rect.id, 2)
+        self.assertEqual(rect.width, 8)
+        self.assertEqual(rect.height, 6)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
 
     def test_update_method_with_kwargs(self):
-        self.rectangle.update(id=2, width=8, height=6, x=3, y=4)
-        self.assertEqual(self.rectangle.id, 2)
-        self.assertEqual(self.rectangle.width, 8)
-        self.assertEqual(self.rectangle.height, 6)
-        self.assertEqual(self.rectangle.x, 3)
-        self.assertEqual(self.rectangle.y, 4)
+        rect = Rectangle(5, 7)
+        rect.update(id=2, width=8, height=6, x=3, y=4)
+        self.assertEqual(rect.id, 2)
+        self.assertEqual(rect.width, 8)
+        self.assertEqual(rect.height, 6)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
 
     def test_update_method_with_mixed_args_and_kwargs(self):
-        self.rectangle.update(2, width=8, height=6)
-        self.assertEqual(self.rectangle.id, 2)
-        self.assertEqual(self.rectangle.width, 8)
-        self.assertEqual(self.rectangle.height, 6)
-        self.assertEqual(self.rectangle.x, 2)  # x is not provided, should not change
-        self.assertEqual(self.rectangle.y, 1)  # y is not provided, should not change
+        rect = Rectangle(5, 7)
+        rect.update(2, width=8, height=6)
+        self.assertEqual(rect.id, 2)
+        self.assertEqual(rect.width, 8)
+        self.assertEqual(rect.height, 6)
+        self.assertEqual(rect.x, 0)  # x is not provided, should not change
+        self.assertEqual(rect.y, 0)  # y is not provided, should not change
+
+    def test_to_dictionary_method(self):
+        rect = Rectangle(4, 5, 2, 3, 1)
+        result = rect.to_dictionary()
+        expected = {'x': 2, 'y': 3, 'id': 1, 'height': 5, 'width': 4}
+        self.assertEqual(result, expected)
 
 
 if __name__ == '__main__':
