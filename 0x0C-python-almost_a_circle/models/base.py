@@ -22,7 +22,7 @@ class Base:
         """Method that returns JSON representation fo list dict."""
 
         if list_dictionaries is None:
-            return "[]"
+            return []
         else:
             return json.dumps(list_dictionaries)
 
@@ -32,7 +32,7 @@ class Base:
         
         with open(f"{cls.__name__}.json", "w") as filejson:
             if list_objs is None:
-                filejson.write("[]")
+                filejson.write([])
             else:
                 filejson.write(cls.to_json_string(list_objs))
 
@@ -40,7 +40,7 @@ class Base:
     def from_json_string(json_string):
         """Method that returns the list of the JSON string representation."""
         if json_string is None:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
