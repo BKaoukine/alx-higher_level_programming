@@ -33,7 +33,7 @@ class Base:
             if list_objs is None:
                 filejson.write("[]")
             else:
-                filejson.write(Base.to_json_string(list_objs))
+                filejson.write(cls.to_json_string(list_objs))
 
     def from_json_string(json_string):
         """Method that returns the list of the JSON string representation."""
