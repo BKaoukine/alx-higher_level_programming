@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """Square Class."""
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Square Class that inherits from Rectangle."""
+
     def __init__(self, size, x=0, y=0, id=None):
         """Class Constructor."""
         super().__init__(id, x, y)
@@ -12,6 +14,7 @@ class Square(Rectangle):
 
     @property
     def width(self):
+        """Get the width."""
         return super().width
 
     @width.setter
@@ -31,7 +34,6 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Set the size, assigning the same value to width and height."""
-
         if type(value) is not int:
             raise TypeError("width must be integer")
         if value <= 0:
@@ -56,7 +58,7 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Method that returns a dic representation of the Class"""
+        """To_dictionary Creates a dic representation of the Class."""
         return {
             'id': self.id,
             'size': self.size,
