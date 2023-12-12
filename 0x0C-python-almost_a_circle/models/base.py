@@ -36,6 +36,7 @@ class Base:
             else:
                 filejson.write(cls.to_json_string(list_objs))
 
+    @staticmethod
     def from_json_string(json_string):
         """Method that returns the list of the JSON string representation."""
         if json_string is None:
@@ -43,6 +44,7 @@ class Base:
         else:
             return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """Method returns an instance with all attributes already set."""
 
@@ -54,6 +56,7 @@ class Base:
         new_instance.update(**dictionary)
         return new_instance
 
+    @classmethod
     def load_from_file(cls):
         """Method returns a list of instances."""
 
