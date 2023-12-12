@@ -29,7 +29,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Method that saves the JSON list_objs to a file."""
-        
+
         with open(f"{cls.__name__}.json", "w") as filejson:
             if list_objs is None:
                 filejson.write([])
