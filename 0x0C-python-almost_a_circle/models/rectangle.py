@@ -16,6 +16,7 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self) -> str:
+        """__str__ method returns a representation of class."""
         return (
             "[Rectangle] (" + str(self.id) + ") " +
             str(self.x) + "/" + str(self.y) + " - " +
@@ -72,6 +73,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Area method calculates the area of the rectangle."""
         return self.__width * self.__height
 
     def display(self):
@@ -99,7 +101,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Method that returns a dic representation of the Class"""
+        """To_dictionary creates a dic representation of the Class."""
         return {
             'x': self.x,
             'y': self.y,
