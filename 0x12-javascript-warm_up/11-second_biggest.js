@@ -8,10 +8,10 @@ if (numarg <= 3) {
   let i = 0;
   let j = 1;
   while (i < numarg - 1) {
-    if (process.argv[i] > process.argv[j]) {
-      maxnum = process.argv[i];
+    if (parseInt(process.argv[i]) > parseInt(process.argv[j])) {
+      maxnum = parseInt(process.argv[i]);
     } else {
-      maxnum = process.argv[j];
+      maxnum = parseInt(process.argv[j]);
     }
     i++;
     j++;
