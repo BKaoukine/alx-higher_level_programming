@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const nSquare = require('./5-square.js');
+const Square5 = require('./5-square.js');
 
-class Square extends nSquare {
+class Square extends Square5 {
   constructor (size) {
     super(size);
   }
@@ -11,8 +11,12 @@ class Square extends nSquare {
     if (c === undefined) {
       super.print();
     } else {
-      for (let i = 0; i < this.width; i++) {
-        console.log(c.repeat(this.width));
+      for (let i = 0; i < this.height; i++) {
+        let str = '';
+        for (let j = 0; j < this.width; j++) {
+          str += 'C';
+        }
+        console.log(str);
       }
     }
   }
