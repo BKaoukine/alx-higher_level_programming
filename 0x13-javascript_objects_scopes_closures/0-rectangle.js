@@ -1,8 +1,4 @@
 #!/usr/bin/node
-class Rectangle {
-  constructor () {
-    // Constructor logic here
-  }
-}
+class Rectangle {}
 
 module.exports = Rectangle
