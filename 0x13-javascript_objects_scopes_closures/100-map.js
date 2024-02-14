@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let importedlist = require('./100-data.js').list;
+const importedlist = require('./100-data.js').list;
 
 let i = 0;
 
