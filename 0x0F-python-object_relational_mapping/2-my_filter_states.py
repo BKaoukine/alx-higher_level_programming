@@ -27,7 +27,7 @@ if __name__ == '__main__':
     )
     cur = db.cursor()
     
-    cur.execute(f"SELECT {sys.argv[4]} FROM states")
+    cur.execute(f"SELECT * FROM states WHERE name LIKE '{sys.argv[4]}' ORDER BY states.id ASC")
     
     rows = cur.fetchall()
     
