@@ -14,22 +14,17 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    arguments = sys.argv
-
-    # Establish a connection to the MySQL server
-    db = MySQLdb.connect(host='localhost', user=arguments[1], passwd=arguments[2], db=arguments[3], port=3306)
+    db = MySQLdb.connect(
+        host="localhost",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
     cur = db.cursor()
-
-    # Execute the SQL query
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-
-    # Fetch all the results
-    states = cur.fetchall()
-
-    # Print the results in the desired format
-    for state in states:
-        print(state)
-
-    # Close the cursor and connection
+    cur.execute("SELECT * FROM states")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
