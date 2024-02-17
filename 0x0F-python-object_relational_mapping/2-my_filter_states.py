@@ -29,13 +29,13 @@ if __name__ == '__main__':
     query = query = "SELECT * FROM states WHERE name \
     LIKE BINARY '{}' ORDER BY states.id".format(
         sys.argv[4])
-    
+
     cur.execute(query)
-    
+
     rows = cur.fetchall()
-    
+
     for row in rows:
         print(row)
-    
+
     cur.close()
     db.close()
