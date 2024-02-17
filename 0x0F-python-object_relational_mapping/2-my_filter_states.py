@@ -18,7 +18,6 @@ if __name__ == '__main__':
     """
     Main function to connect to the MySQL database and execute a query.
     """
-    # Establish a connection to the MySQL server
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
@@ -28,16 +27,12 @@ if __name__ == '__main__':
     )
     cur = db.cursor()
     
-    # Execute the SQL query to select specified column from the 'states' table
     cur.execute(f"SELECT {sys.argv[4]} FROM states")
     
-    # Fetch all the results
     rows = cur.fetchall()
     
-    # Print the results
     for row in rows:
         print(row)
     
-    # Close the cursor and database connection
     cur.close()
     db.close()
