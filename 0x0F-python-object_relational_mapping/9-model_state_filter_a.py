@@ -27,8 +27,7 @@ if __name__ == "__main__":
 
     session_one = session()
 
-    results = session_one.query(State).filter
-    (State.name.like('%a%')).order_by(State.id)
+    results = session_one.query(State).filter(State.name.like('%a%'))
 
     for state in results:
         print(state.id, state.name, sep=": ")
