@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 
 """
-A script to connect to a MySQL database using SQLAlchemy and retrieve data from the State table.
+A script to connect to a MySQL database using
+SQLAlchemy and retrieve data from the State table.
 
 Usage:
-    The script requires three command-line arguments: username, password, and database name.
+    The script requires three command-line
+    arguments: username, password, and database name.
     Example: ./script.py username password database_name
 """
 
