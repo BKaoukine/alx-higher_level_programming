@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-A script to connect to a MySQL database using
+A script to connect to a MySQL database using.
+
 SQLAlchemy and retrieve data from the State table.
 
 Usage:
