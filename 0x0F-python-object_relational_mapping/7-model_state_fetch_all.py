@@ -30,6 +30,6 @@ if __name__ == "__main__":
     results = session_one.query(State).order_by(State.id)
 
     for state in results:
-        print(state.id, state.name)
+        print(state.id, state.name, sep=": ")
 
     session_one.close()
