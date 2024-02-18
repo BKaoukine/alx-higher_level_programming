@@ -16,22 +16,20 @@ from sqlalchemy.orm import sessionmaker
 import sys
 from sqlalchemy import create_engine
 
+if __name__ == "__main__":
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'
+        .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True
+        )
+    Base.metadata.create_all(engine)
 
-engine = create_engine(
-    'mysql+mysqldb://{}:{}@localhost/{}'
-    .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True
-    )
-Base.metadata.create_all(engine)
+    session = sessionmaker(bind=engine)
 
+    session_one = session()
 
-session = sessionmaker(bind=engine)
+    results = session_one.query(State).order_by(State.id)
 
-session_one = session()
+    for state in results:
+        print(state.id, state.name)
 
-
-results = session_one.query(State).order_by(State.id)
-
-for state in results:
-    print(state.id, state.name)
-
-session_one.close()
+    session_one.close()
