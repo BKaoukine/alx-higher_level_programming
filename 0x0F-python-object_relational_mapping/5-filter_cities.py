@@ -19,7 +19,8 @@ if __name__ == '__main__':
     """
     # Check if correct number of arguments provided
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database> <State>")
+        print("Usage: python script.py <username>\
+               <password> <database> <State>")
         sys.exit(1)
 
     # Connect to MySQL server
