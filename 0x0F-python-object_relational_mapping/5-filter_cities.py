@@ -44,7 +44,12 @@ if __name__ == '__main__':
 
     # Fetch and print results
     rows = cur.fetchall()
-    print(rows)
+
+    # Extract city names and concatenate them into a comma-separated string
+    city_names = ', '.join(row[0] for row in rows)
+
+    # Print the comma-separated city names
+    print(city_names)
 
     # Close cursor and database connection
     cur.close()
