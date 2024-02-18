@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)
 
     session_one = session()
-    count = session.query(func.count()).select_from(State).scalar()
+    count = session_one.query(func.count()).select_from(State).scalar()
     if count == 0:
         print("Nothing")
     results = session_one.query(State).filter(State.id == 1)
