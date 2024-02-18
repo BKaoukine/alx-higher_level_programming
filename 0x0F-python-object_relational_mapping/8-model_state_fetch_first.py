@@ -14,7 +14,7 @@ Usage:
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 import sys
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -26,12 +26,12 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)
 
     session_one = session()
-    count = session_one.query(func.count()).select_from(State).scalar()
-    if count == 0:
-        print("Nothing")
-    results = session_one.query(State).filter(State.id == 1)
 
-    for state in results:
-        print(state.id, state.name, sep=": ")
+    results = session_one.query(State).first()
+
+    if results is None:
+        print("Nothing")
+    else:
+        print(results.id, results.name, sep=": ")
 
     session_one.close()
