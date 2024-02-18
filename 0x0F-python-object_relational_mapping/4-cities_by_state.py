@@ -34,7 +34,10 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     # Execute SQL query
-    query = "SELECT * FROM cities ORDER BY cities.id"
+    query = "SELECT c.id AS city_id,c.name AS city_name,s.name AS state_name\
+            FROM cities AS c\
+            JOIN states AS s ON c.state_id = s.id\
+            ORDER BY c.id"
     cur.execute(query)
 
     # Fetch and print results
