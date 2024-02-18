@@ -14,7 +14,7 @@ Usage:
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 import sys
-from sqlalchemy import create_enginen, func
+from sqlalchemy import create_engine, func
 
 if __name__ == "__main__":
     engine = create_engine(
