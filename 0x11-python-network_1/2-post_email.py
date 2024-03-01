@@ -17,4 +17,4 @@ if __name__ == "__main__":
 
         body = respons.read()
 
-        print("Your email is: " + body.decode('utf-8'))
+        print("Your email is: " + str(body.decode('utf-8')))
