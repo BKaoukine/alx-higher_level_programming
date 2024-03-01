@@ -9,6 +9,6 @@ import sys
 
 with urllib.request.urlopen(sys.argv[1]) as respons:
 
-    header = respons.info()['X-Request-Id']
+    header = respons.info().get('X-Request-Id')
 
     print(header)
