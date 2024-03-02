@@ -3,13 +3,11 @@
 sends a request to the URL and displays the value of
 the variable X-Request-Id in the response header"""
 
-import requests
+import requests as reqs
 import sys
 
 
-url = sys.argv[1]
-
 if __name__ == "__main__":
-    req = requests.get(url)
-    x_req_id = req.headers['X-Request-Id']
-    print(x_req_id)
+    url = sys.argv[1]
+    resp = reqs.get(url)
+    print(resp.headers.get('X-Request-Id'))
