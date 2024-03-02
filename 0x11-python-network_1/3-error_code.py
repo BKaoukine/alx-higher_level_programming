@@ -4,7 +4,8 @@
 and displays the value of the X-Request-Id.
 variable found in the header of the response.
 """
-from urllib import request, HTTPError
+from urllib import request
+from urllib.error import HTTPError
 import sys
 if __name__ == "__main__":
 
