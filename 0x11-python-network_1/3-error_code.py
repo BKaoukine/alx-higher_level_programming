@@ -16,4 +16,4 @@ if __name__ == "__main__":
             body = respons.read()
             print(body.decode('utf-8'))
         except HTTPError as error:
-            print(error.code)
+            print("Error code:", error.code)
