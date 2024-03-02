@@ -10,10 +10,10 @@ import sys
 if __name__ == "__main__":
 
     url = sys.argv[1]
-
-    with request.urlopen(url) as respons:
-        try:
+    try:
+        with request.urlopen(url) as respons:
             body = respons.read()
             print(body.decode('utf-8'))
-        except HTTPError as error:
-            print("Error code:", error.code)
+
+    except HTTPError as error:
+        print("Error code:", error.code)
