@@ -6,13 +6,13 @@ and displays the bodey or the error code.
 
 import requests
 import sys
+if __name__ == "__main__":
+    url = sys.argv[1]
 
-url = sys.argv[1]
+    resp = requests.get(url)
 
-resp = requests.get(url)
+    if resp.status_code > 400:
+        print(resp.status_code)
 
-if resp.status_code > 400:
-    print(resp.status_code)
-
-else:
-    print(resp.text)
+    else:
+        print(resp.text)
