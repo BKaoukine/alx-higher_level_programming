@@ -11,7 +11,7 @@ if __name__ == "__main__":
 #Variables:
     url = "http://0.0.0.0:5000/search_user"
 
-    if not sys.argv[1]:
+    if len(sys.argv) < 2:
         letter = ""
     else:
         letter = sys.argv[1]
