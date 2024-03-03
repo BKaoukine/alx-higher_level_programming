@@ -22,7 +22,7 @@ if __name__ == "__main__":
     resp = requests.post(url, data=dic)
 
     if resp.json:
-        print(resp.text)
+        print(f"[{resp.text['id']}] {resp.text['name']}")
     
     elif resp.json is None:
         print("No result")
