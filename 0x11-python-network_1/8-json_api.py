@@ -20,11 +20,11 @@ if __name__ == "__main__":
     # Code:
 
     resp = requests.post(url, data=dic)
-    API_data = resp.json()
-    if API_data:
-        print(f"[{API_data['id']}] {API_data['name']}")
-
-    elif resp.raise_for_status() == 204:
-        print("No result")
-    else:
+    try:
+        API_data = resp.json()
+        if API_data:
+            print(f"[{API_data['id']}] {API_data['name']}")
+        else:
+            print("No result")
+    except ValueError:
         print("Not a valid JSON")
