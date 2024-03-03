@@ -8,15 +8,16 @@ import requests
 import sys
 
 if __name__ == "__main__":
-#Variables
-    letter = sys.argv[1]
+#Variables:
     url = "http://0.0.0.0:5000/search_user"
 
     if not sys.argv[1]:
         letter = ""
+    else:
+        letter = sys.argv[1]
     
     dic = {"q" : letter}
-
+#Code:
 
     resp = requests.post(url, data=dic)
 
