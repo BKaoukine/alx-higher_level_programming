@@ -8,23 +8,24 @@ import requests
 import sys
 
 if __name__ == "__main__":
-#Variables:
+    # Variables:
     url = "http://0.0.0.0:5000/search_user"
 
     if len(sys.argv) < 2:
         letter = ""
     else:
         letter = sys.argv[1]
-    
-    dic = {"q" : letter}
-#Code:
+
+    dic = {"q": letter}
+    # Code:
 
     resp = requests.post(url, data=dic)
+    API_data = resp.json()
+    if API_data:
+        for key in API_data:
+            print(f"[{API_data[key]}]")
 
-    if resp.json:
-        print(f"[{resp.text['id']}] {resp.text['name']}")
-    
-    elif resp.json is None:
+    elif resp.status_code == 204:
         print("No result")
     else:
         print("Not a valid JSON")
