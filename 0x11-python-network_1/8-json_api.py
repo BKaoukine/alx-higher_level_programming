@@ -22,8 +22,7 @@ if __name__ == "__main__":
     resp = requests.post(url, data=dic)
     API_data = resp.json()
     if API_data:
-        for key in API_data:
-            print(f"[{API_data[key]}]")
+        print(f"[{API_data['id']} {API_data['name']}]")
 
     elif resp.status_code == 204:
         print("No result")
