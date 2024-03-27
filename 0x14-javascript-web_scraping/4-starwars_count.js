@@ -17,6 +17,6 @@ request.get(apiUrl, function (err, response, body) {
         }
       }
     }
-    console.log(count);
+    console.log(`${count}`);
   }
 });
